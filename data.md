@@ -15,7 +15,6 @@
 - Codingame - JavaScript
 - Codingame - TypeScript
 - Codingame - Python
-- Codedex.io
 
 ## Project Based Learing
 
