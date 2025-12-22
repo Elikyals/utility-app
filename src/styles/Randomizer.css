@@ -10,5 +10,46 @@ body {
 }
 Nav {
     background-color: white;
-    filter: drop-shadow(1px 0px 0.75px #000);
+    filter: drop-shadow(1px 0px 0.75px #8b8b8b);
+}
+.playground {
+    display: block;
+    margin: 40px auto;
+    text-align: center;
+}
+.playground h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-block: 40px;
+}
+.playground button {
+    background-color: #5BB25F;
+    color: white;
+    border: none;
+    padding: 20px 60px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+}
+.display-screen {
+    margin-block: 40px;
+    border: 2px solid #5BB25F;
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+}
+.display-screen img {
+    height: 66px;
+    margin-top: 60px;
+}
+.display-screen p {
+    color: #BBBBBB;
+    font-size: 24px;
+    font-weight: 300;
+    width: 75%;
+    margin: 0 auto;
+    line-height: normal;
+    
 }

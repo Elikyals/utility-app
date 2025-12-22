@@ -9,8 +9,8 @@ export default function Randomizer(){
             <section className="playground">
                 <h2>Pick Your Challenge</h2>
                 <button>Shuffle Project</button>
-                <div>
-                    <img src=""></img>
+                <div className="display-screen">
+                    <img src="src/assets/bulb.svg" />
                     <p>Click shuffle to get a random project Challenge</p>
                 </div>
             </section>
