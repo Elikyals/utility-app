@@ -13,7 +13,7 @@
 - Elevator Saga - JavaScript
 <!-- - Codingame - Bash -->
 - Codingame - JavaScript
-- Codingame - TypeScript
+<!-- - Codingame - TypeScript -->
 - Codingame - Python
 
 ## Project Based Learing
