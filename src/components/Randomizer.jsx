@@ -3,6 +3,7 @@ import '../styles/Randomizer.css'
 import { useState, useEffect } from "react"
 import { getActiveChallenges, getRandomChallenge } from "../services/challengeService.js"
 import classNames from "classnames"
+import bulbIcon from '../assets/bulb.svg'
 
 export default function Randomizer(){
     const [challenges, setChallenges] = useState([])
@@ -51,7 +52,7 @@ export default function Randomizer(){
                             </>
                         ): (
                             <>
-                                <img src="src/assets/bulb.svg" />
+                                <img src={bulbIcon} alt="bulb icon"/>
                                 <p>Click shuffle to get a random project Challenge</p>
                             </>
                         )
