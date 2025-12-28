@@ -2,54 +2,163 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 360px auto;
+@media screen and (max-width: 599px) {
+    .container {
+        height: 100vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .playground {
+        padding: 20px;
+        text-align: center;
+    }
+    .playground h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+    .playground button {
+        background-color: #5BB25F;
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Inter", sans-serif;
+        text-transform: uppercase;
+    }
+    .display-screen {
+        margin-block: 30px;
+        border: 2px solid #5BB25F;
+        border-radius: 10px;
+        width: 100%;
+        height: 250px;
+        margin-inline: auto;
+        background-color: #F7F7F7
+    }
+    .display-screen--empty img {
+        height: 50px;
+        margin-top: 40px;
+    }
+
+    .display-screen--empty p {
+        color: #BBBBBB;
+        font-size: 18px;
+        font-weight: 300;
+        width: 75%;
+        margin: 0 auto;
+        line-height: normal;
+
+    }
+        .display-screen--active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .display-screen--active h2,
+    .display-screen--active p {
+        margin: 0;
+        padding-block: 5px;
+    }
+
+    .challenge-category {
+        font-style: italic;
+        font-weight: bolder;
+    }
 }
-Nav {
-    background-color: white;
-    filter: drop-shadow(1px 0px 0.75px #8b8b8b);
+
+@media screen and (min-width: 600px) {
+    .container{
+        display: none; /* TO-DO */
 }
-.playground {
-    display: block;
-    margin: 40px auto;
-    text-align: center;
 }
-.playground h2 {
-    font-size: 36px;
-    text-transform: uppercase;
-    margin-block: 40px;
-}
-.playground button {
-    background-color: #5BB25F;
-    color: white;
-    border: none;
-    padding: 20px 60px;
-    border-radius: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "Inter", sans-serif;
-    text-transform: uppercase;
-}
-.display-screen {
-    margin-block: 40px;
-    border: 2px solid #5BB25F;
-    border-radius: 10px;
-    width: 500px;
-    height: 300px;
-}
-.display-screen img {
-    height: 66px;
-    margin-top: 60px;
-}
-.display-screen p {
-    color: #BBBBBB;
-    font-size: 24px;
-    font-weight: 300;
-    width: 75%;
-    margin: 0 auto;
-    line-height: normal;
-    
+
+@media screen and (min-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template-columns: 360px auto;
+    }
+
+    Nav {
+        background-color: white;
+        filter: drop-shadow(1px 0px 0.75px #8b8b8b);
+    }
+
+    .playground {
+        display: block;
+        margin: 40px auto;
+        text-align: center;
+    }
+
+    .playground h2 {
+        font-size: 36px;
+        text-transform: uppercase;
+        margin-block: 40px;
+    }
+
+    .playground button {
+        background-color: #5BB25F;
+        color: white;
+        border: none;
+        padding: 20px 60px;
+        border-radius: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Inter", sans-serif;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .playground button:hover {
+        background-color: #5bb25fcb;
+    }
+
+    .display-screen {
+        margin-block: 40px;
+        border: 2px solid #5BB25F;
+        border-radius: 10px;
+        width: 500px;
+        height: 300px;
+        background-color: #F7F7F7;
+    }
+
+    .display-screen--empty img {
+        height: 66px;
+        margin-top: 60px;
+    }
+
+    .display-screen--empty p {
+        color: #BBBBBB;
+        font-size: 24px;
+        font-weight: 300;
+        width: 75%;
+        margin: 0 auto;
+        line-height: normal;
+
+    }
+
+    .display-screen--active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .display-screen--active h2,
+    .display-screen--active p {
+        margin: 0;
+        padding-block: 5px;
+    }
+
+    .challenge-category {
+        font-style: italic;
+        font-weight: bolder;
+    }
 }
