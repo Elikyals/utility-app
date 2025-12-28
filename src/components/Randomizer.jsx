@@ -10,10 +10,6 @@ export default function Randomizer() {
     const [currentChallenge, setCurrentChallenge] = useState(null)
 
     useEffect(() => {
-        console.log('Firebase Config:', {
-            apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-            projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-        });
         async function loadChallenges() {
             try {
                 const data = await getActiveChallenges()
