@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .container {
@@ -40,11 +41,11 @@ Nav {
     width: 500px;
     height: 300px;
 }
-.display-screen img {
+.display-screen--empty img{
     height: 66px;
     margin-top: 60px;
 }
-.display-screen p {
+.display-screen--empty p {
     color: #BBBBBB;
     font-size: 24px;
     font-weight: 300;
@@ -52,4 +53,20 @@ Nav {
     margin: 0 auto;
     line-height: normal;
     
+} 
+.display-screen--active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.display-screen--active h2,
+.display-screen--active p{
+    margin: 0;
+    padding-block: 5px;
+}
+
+.challenge-category {
+    font-style: italic;
+    font-weight: bolder;
 }
