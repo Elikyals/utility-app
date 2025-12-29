@@ -14,7 +14,7 @@ function App() {
     switch (currentPage) {
       case 'home': 
         return <Home />
-      case 'randomize':
+      case 'randomizer':
         return <Randomizer />
       case 'lt-tracker':
         return <LeetCodeTracker />

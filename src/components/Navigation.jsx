@@ -9,7 +9,7 @@ import code from '../assets/code.svg'
 import portfolio from '../assets/portfolio.svg'
 import movie from '../assets/movie.svg'
 
-export default function Nav() {
+export default function Nav({currentPage, onPageChange}) {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 600)
 
     useEffect(() => {
@@ -28,23 +28,29 @@ export default function Nav() {
             </div>
             {!isMobile && <ColoredLine width="90%" />}
             <div className='nav-btn'>
-                <button className="home-btn">
+                <button 
+                    className={`home-btn ${currentPage === 'home'? 'active': ''}`}
+                    onClick={() => onPageChange('home')}>
                     <img src={home} alt="Home Icon" />
                     <span>Home</span>
                 </button>
-                <button className="randomize-btn selected">
+                <button className={`randomize-btn ${currentPage === 'randomizer'? 'active': ''}`}
+                    onClick={() => onPageChange('randomizer')}>
                     <img src={dice} alt="Randomize Icon" />
                     <span>Randomize</span>
                 </button>
-                <button className="lt-tracker-btn">
+                <button className={`lt-tracker-btn ${currentPage === 'lt-tracker'? 'active': ''}`}
+                    onClick={() => onPageChange('lt-tracker')}>
                     <img src={code} alt="Leetcode Tracker Icon" />
                     <span>{isMobile? "LT Tracker": "LeetCode Tracker"}</span>
                 </button>
-                <button className="portfolio-btn">
+                <button className={`portfolio-btn ${currentPage === 'portfolio'? 'active': ''}`}
+                    onClick={() => onPageChange('portfolio')}>
                     <img src={portfolio} alt="Portfolio Tracker Icon" />
                     <span>Portfolio</span>
                 </button>
-                <button className="movies-btn">
+                <button className={`movies-btn ${currentPage === 'movies'? 'active': ''}`}
+                    onClick={() => onPageChange('movies')}>
                     <img src={movie} alt="Movie Tracker Icon" />
                     <span>Movies</span>
                 </button>
