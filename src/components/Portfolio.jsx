@@ -1,4 +1,3 @@
-import Nav from "./Navigation"
 export default function Portfolio() {
     return (
         <>

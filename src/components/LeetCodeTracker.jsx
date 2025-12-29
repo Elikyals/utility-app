@@ -4,7 +4,6 @@ export default function LeetCodeTracker() {
         <>
             <>
                 <div className="container">
-                    <Nav />
                 </div>
             </>
         </>

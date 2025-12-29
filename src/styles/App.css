@@ -1,4 +1,35 @@
 body {
     background-color: #FBFBFB;
     font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+@media screen and (max-width: 599px) {
+    .main-container{
+        display: flex;
+    }
+    .main-content {
+        height: 100vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .main-container {
+        display: flex;
+        min-height: 100vh;
+    }
+    Nav {
+        background-color: white;
+        filter: drop-shadow(1px 0px 0.75px #8b8b8b);
+        width: 400px;
+    }
+    .main-content {
+        flex: 1;
+        display: flex;
+    }
 }

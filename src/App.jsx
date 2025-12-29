@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './styles/App.css'
 import Home from './components/Home.jsx'
-import  Randomizer  from './components/Randomizer.jsx'
+import Randomizer from './components/Randomizer.jsx'
 import LeetCodeTracker from './components/LeetCodeTracker.jsx'
 import Portfolio from './components/Portfolio.jsx'
 import Movies from './components/Movies.jsx'
@@ -12,7 +12,7 @@ function App() {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'home': 
+      case 'home':
         return <Home />
       case 'randomizer':
         return <Randomizer />
@@ -29,10 +29,12 @@ function App() {
 
   return (
     <>
-      <Nav currentPage={currentPage} onPageChange={setCurrentPage} />
-      <main className='main-content'>
-        {renderPage()}
-      </main>
+      <div className='main-container'>
+        <Nav currentPage={currentPage} onPageChange={setCurrentPage} />
+        <main className='main-content'>
+          {renderPage()}
+        </main>
+      </div>
     </>
   )
 }
