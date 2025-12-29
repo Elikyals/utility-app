@@ -29,7 +29,6 @@ export default function Randomizer() {
     return (
         <>
             <div className="container">
-                <Nav />
                 <section className="playground">
                     <h2>Pick Your Challenge</h2>
                     <button onClick={handleShuffle}>Shuffle Project</button>

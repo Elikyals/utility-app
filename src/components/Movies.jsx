@@ -1,5 +1,5 @@
 import Nav from "./Navigation"
-export default function Portfolio() {
+export default function Movies() {
     return (
         <>
             <>
