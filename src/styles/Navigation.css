@@ -60,10 +60,10 @@
     nav button span {
         text-transform: uppercase;
     }
-    .selected {
+    .active {
         color: #5BB25F;
     }
-    .selected img {
+    .active img {
     filter: brightness(0) saturate(100%) invert(64%) sepia(35%) saturate(708%) hue-rotate(74deg) brightness(94%) contrast(87%);
     }
 }
@@ -72,9 +72,7 @@
 
 @media screen and (min-width: 1024px) {
     nav {
-        width: 100%;
         height: 100vh;
-
     }
 
     .app-logo {
@@ -128,7 +126,7 @@
         border-block: 2px dashed #061807;
     }
 
-    .selected {
+    .active {
         background-color: #5BB25F;
         opacity: 0.5;
         border-block: 2px dashed #061807;

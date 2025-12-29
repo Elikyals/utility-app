@@ -28,39 +28,35 @@ export default function Randomizer() {
 
     return (
         <>
-            <div className="container">
-                <Nav />
-                <section className="playground">
-                    <h2>Pick Your Challenge</h2>
-                    <button onClick={handleShuffle}>Shuffle Project</button>
-                    <div className={classNames("display-screen", {
-                        "display-screen--active": currentChallenge,
-                        "display-screen--empty": !currentChallenge
-                    })}>
-                        {
-                            currentChallenge ? (
-                                <>
-                                    <p className="challenge-category">
-                                        {currentChallenge.category}
-                                    </p>
-                                    <h2 className="challenge-technology">
-                                        {currentChallenge.technology}
-                                    </h2>
-                                    <p className="challenge-platform">
-                                        {currentChallenge.platform}
-                                    </p>
-                                </>
-                            ) : (
-                                <>
-                                    <img src={bulbIcon} alt="bulb icon" />
-                                    <p>Click shuffle to get a random project Challenge</p>
-                                </>
-                            )
-                        }
-
-                    </div>
-                </section>
-            </div>
+            <section className="playground">
+                <h2>Pick Your Challenge</h2>
+                <button onClick={handleShuffle}>Shuffle Project</button>
+                <div className={classNames("display-screen", {
+                    "display-screen--active": currentChallenge,
+                    "display-screen--empty": !currentChallenge
+                })}>
+                    {
+                        currentChallenge ? (
+                            <>
+                                <p className="challenge-category">
+                                    {currentChallenge.category}
+                                </p>
+                                <h2 className="challenge-technology">
+                                    {currentChallenge.technology}
+                                </h2>
+                                <p className="challenge-platform">
+                                    {currentChallenge.platform}
+                                </p>
+                            </>
+                        ) : (
+                            <>
+                                <img src={bulbIcon} alt="bulb icon" />
+                                <p>Click shuffle to get a random project Challenge</p>
+                            </>
+                        )
+                    }
+                </div>
+            </section>
         </>
     )
 }
