@@ -26,7 +26,7 @@ body {
         font-family: "Inter", sans-serif;
         text-transform: uppercase;
     }
-    .display-screen {
+    .displayScreen {
         margin-block: 30px;
         border: 2px solid #5BB25F;
         border-radius: 10px;
@@ -35,12 +35,12 @@ body {
         margin-inline: auto;
         background-color: #F7F7F7
     }
-    .display-screen--empty img {
+    .displayScreenEmpty img {
         height: 50px;
         margin-top: 40px;
     }
 
-    .display-screen--empty p {
+    .displayScreenEmpty p {
         color: #BBBBBB;
         font-size: 18px;
         font-weight: 300;
@@ -49,14 +49,14 @@ body {
         line-height: normal;
 
     }
-    .display-screen--active {
+    .displayScreenActive {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
     }
-    .display-screen--active h2,
-    .display-screen--active p {
+    .displayScreenActive h2,
+    .displayScreenActive p {
         margin: 0;
         padding-block: 5px;
     }
