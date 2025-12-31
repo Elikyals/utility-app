@@ -1,0 +1,40 @@
+.playground {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+.icon path {
+        fill: #BBB;
+    }
+.playground h2 {
+        color: #BBB;
+        text-transform: none;
+        font-weight: bolder;
+        margin: 0;
+        line-height: 1;
+    } 
+
+@media screen and (max-width: 599px) {
+    .icon {
+        width: 100px;
+        height: 100px;
+    }
+    .playground h2 {
+        font-size: 40px;
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .icon {
+        width: 200px;
+        height: 200px;
+    }
+    
+
+    .playground h2 {
+        font-size: 80px;
+        width: 75%;
+    } 
+}
