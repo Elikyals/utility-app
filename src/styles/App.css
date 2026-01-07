@@ -6,16 +6,12 @@ body {
     height: 100vh;
 }
 @media screen and (max-width: 599px) {
-    .main-container{
-        display: flex;
-    }
     .main-content {
-        height: 100vh;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        min-height: 100vh;
         margin: 0 auto;
+        box-sizing: border-box;
+        padding-top: 60px;
+        padding-bottom: 70px;
     }
 }
 @media screen and (min-width: 1024px) {

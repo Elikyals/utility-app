@@ -7,8 +7,12 @@ body {
 
 @media screen and (max-width: 599px) {
     .playground {
-        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
+        min-height: calc(100vh - 130px);
     }
 
     .playground h2 {

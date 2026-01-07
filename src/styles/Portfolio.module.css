@@ -24,6 +24,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        min-height: calc(100vh - 130px);
     }
     .icon {
         width: 100px;
