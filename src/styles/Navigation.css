@@ -51,11 +51,12 @@
         font-weight: 600;
         color: rgba(0, 0, 0, 0.4);
     }
-    nav button img {
-        height: 30px;
-        width: 30px;
-        filter: saturate(0%) brightness(0.4);
-        opacity: 0.3;
+    nav .icon {
+        height: 32px;
+        width: 32px;
+    }
+    nav .icon path {
+        fill: #BBB;
     }
     nav button span {
         text-transform: uppercase;
@@ -63,8 +64,8 @@
     .active {
         color: #5BB25F;
     }
-    .active img {
-    filter: brightness(0) saturate(100%) invert(64%) sepia(35%) saturate(708%) hue-rotate(74deg) brightness(94%) contrast(87%);
+    .active .icon path{
+        fill: #5BB25F;
     }
 }
 
