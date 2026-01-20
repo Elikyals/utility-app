@@ -19,10 +19,6 @@ export default function Movies() {
     const handleButtonClick = () => {
         setCurrentPage(currentPage === 'movies' ? 'watchlist': 'movies')
     }
-    const movie_name = "Harry Porter"
-    const formatted_movie_name = movie_name.replace(" ", "+")
-    // fetch(`https://www.omdbapi.com/?s=${formatted_movie_name}&apikey=${API_KEY}`)
-    fetch(`https://www.omdbapi.com/?s=${formatted_movie_name}&apikey=${import.meta.env.VITE_OMDb_API_KEY}`)
     return (
         <>
             <header className={styles.header}>

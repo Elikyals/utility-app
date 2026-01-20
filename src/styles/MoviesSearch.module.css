@@ -50,6 +50,7 @@
         border-left: 1px solid #d1d5db;
         height: 30px;
     }
+
     .playground {
         display: flex;
         flex-direction: column;
@@ -57,19 +58,23 @@
         align-items: center;
         min-height: calc(100vh - 236px);
     }
+
     .icon {
         width: 100px;
         height: 100px;
     }
-    .icon path{
+
+    .icon path {
         fill: #BBB;
     }
+
     .playground h3 {
         color: #BBB;
         font-size: 30px;
         margin: 0;
     }
-        .missingCatalog {
+
+    .missingCatalog {
         width: 70%;
         color: #BBB;
         font-size: 20px;
@@ -77,6 +82,83 @@
         text-align: center;
     }
 
+    .results {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 40px;
+        max-height: calc(100vh - 325px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .movie {
+        display: flex;
+        gap: 20px;
+    }
+
+    .movie-cover {
+        width: 100px;
+        height: 150px;
+    }
+
+    .movie-details {
+        padding-top: 5px;
+    }
+
+    .movie-title {
+        display: flex;
+        margin: 0 0 5px 0;
+        font-size: 12px;
+        gap: 3px;
+    }
+
+    .movie-ratings {
+        white-space: nowrap;
+    }
+
+    .movie-meta {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 5px;
+        /* flex-wrap: wrap; */
+        font-size: 10px;
+        color: #666;
+        align-items: center;
+    }
+
+    .runtime,
+    .genre {
+        margin: 0;
+    }
+
+    .watchlist-btn {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        font-size: 10px;
+        margin: 0;
+    }
+    
+    .watchlist-icon {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .movie-description {
+        color: #6B7280;
+        font-size: 12px;
+        margin: 0;
+    }
+    hr {
+    height: 1px;
+    background-color: #d1d5db;
+    border: none;
+}
 }
 
 @media screen and (min-width: 1024px) {}
