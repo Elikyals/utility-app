@@ -1,9 +1,11 @@
-.playground {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
 .icon path {
         fill: #BBB;
     }
@@ -17,25 +19,39 @@
     } 
 
 @media screen and (max-width: 599px) {
+    .playground {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 130px);
+    }
     .icon {
         width: 100px;
         height: 100px;
     }
     .playground h2 {
-        font-size: 40px;
+        font-size: 30px;
         width: 75%;
     }
 }
 
 @media screen and (min-width: 1024px) {
+    .playground {
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
     .icon {
         width: 200px;
         height: 200px;
+        align-items: center;
     }
     
 
     .playground h2 {
-        font-size: 80px;
+        font-size: 60px;
         width: 75%;
+        margin: 0 auto;
     } 
 }

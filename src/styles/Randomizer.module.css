@@ -7,14 +7,20 @@ body {
 
 @media screen and (max-width: 599px) {
     .playground {
-        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
+        min-height: calc(100vh - 130px);
     }
+
     .playground h2 {
         font-size: 24px;
         text-transform: uppercase;
         margin-bottom: 40px;
     }
+
     .playground button {
         background-color: #5BB25F;
         color: white;
@@ -26,6 +32,7 @@ body {
         font-family: "Inter", sans-serif;
         text-transform: uppercase;
     }
+
     .displayScreen {
         margin-block: 30px;
         border: 2px solid #5BB25F;
@@ -35,6 +42,7 @@ body {
         margin-inline: auto;
         background-color: #F7F7F7
     }
+
     .displayScreenEmpty img {
         height: 50px;
         margin-top: 40px;
@@ -49,12 +57,14 @@ body {
         line-height: normal;
 
     }
+
     .displayScreenActive {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
     }
+
     .displayScreenActive h2,
     .displayScreenActive p {
         margin: 0;
@@ -68,9 +78,10 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-    .container{
-        display: none; /* TO-DO */
-}
+    .container {
+        display: none;
+        /* TO-DO */
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -103,7 +114,7 @@ body {
         background-color: #5bb25fcb;
     }
 
-    .display-screen {
+    .displayScreen {
         margin-block: 40px;
         border: 2px solid #5BB25F;
         border-radius: 10px;
@@ -112,12 +123,12 @@ body {
         background-color: #F7F7F7;
     }
 
-    .display-screen--empty img {
+    .displayScreenEmpty img {
         height: 66px;
         margin-top: 60px;
     }
 
-    .display-screen--empty p {
+    .displayScreenEmpty p {
         color: #BBBBBB;
         font-size: 24px;
         font-weight: 300;
@@ -127,15 +138,15 @@ body {
 
     }
 
-    .display-screen--active {
+    .displayScreenActive {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
     }
 
-    .display-screen--active h2,
-    .display-screen--active p {
+    .displayScreenActive h2,
+    .displayScreenActive p {
         margin: 0;
         padding-block: 5px;
     }

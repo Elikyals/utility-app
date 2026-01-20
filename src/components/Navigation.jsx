@@ -3,11 +3,11 @@ import { ColoredLine } from './divider'
 import { useState, useEffect } from 'react'
 import logo from '../assets/utility logo.png'
 import person from '../assets/person.svg'
-import home from '../assets/home.svg'
-import dice from '../assets/dice.svg'
-import code from '../assets/code.svg'
-import portfolio from '../assets/portfolio.svg'
-import movie from '../assets/movie.svg'
+import HomeIcon from '../assets/home.svg?react'
+import DiceIcon from '../assets/dice.svg?react'
+import CodeIcon from '../assets/code.svg?react'
+import PortfolioIcon from '../assets/portfolio.svg?react'
+import MovieIcon from '../assets/movie.svg?react'
 
 export default function Nav({currentPage, onPageChange}) {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 600)
@@ -31,27 +31,27 @@ export default function Nav({currentPage, onPageChange}) {
                 <button 
                     className={`home-btn ${currentPage === 'home'? 'active': ''}`}
                     onClick={() => onPageChange('home')}>
-                    <img src={home} alt="Home Icon" />
+                    <HomeIcon className='icon' />
                     <span>Home</span>
                 </button>
                 <button className={`randomize-btn ${currentPage === 'randomizer'? 'active': ''}`}
                     onClick={() => onPageChange('randomizer')}>
-                    <img src={dice} alt="Randomize Icon" />
+                    <DiceIcon className='icon' />
                     <span>Randomize</span>
                 </button>
                 <button className={`lt-tracker-btn ${currentPage === 'lt-tracker'? 'active': ''}`}
                     onClick={() => onPageChange('lt-tracker')}>
-                    <img src={code} alt="Leetcode Tracker Icon" />
+                    <CodeIcon className='icon' />
                     <span>{isMobile? "LT Tracker": "LeetCode Tracker"}</span>
                 </button>
                 <button className={`portfolio-btn ${currentPage === 'portfolio'? 'active': ''}`}
                     onClick={() => onPageChange('portfolio')}>
-                    <img src={portfolio} alt="Portfolio Tracker Icon" />
+                    <PortfolioIcon className='icon' />
                     <span>Portfolio</span>
                 </button>
                 <button className={`movies-btn ${currentPage === 'movies'? 'active': ''}`}
                     onClick={() => onPageChange('movies')}>
-                    <img src={movie} alt="Movie Tracker Icon" />
+                    <MovieIcon className='icon' />
                     <span>Movies</span>
                 </button>
             </div>

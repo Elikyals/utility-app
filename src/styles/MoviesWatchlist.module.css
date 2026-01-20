@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 599px) {
+    .playground {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 240px);
+    }
+    .icon {
+        width: 100px;
+        height: 100px;
+    }
+    .icon path{
+        fill: #BBB;
+    }
+    .playground h3 {
+        color: #BBB;
+        font-size: 26px;
+        margin: 0;
+        text-align: center;
+        width: 80%;
+    }
+    .playground span {
+        display: flex;
+        gap: 8px;
+        padding-top: 10px;
+        
+    }
+    .playground span p {
+        margin: 0;
+        font-weight: 700;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {}
