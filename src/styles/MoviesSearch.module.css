@@ -1,0 +1,82 @@
+@media screen and (max-width: 599px) {
+    .search {
+        width: calc(100% - 52px);
+        max-width: 600px;
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #d1d5db;
+        position: absolute;
+        top: 130px;
+        left: 12px;
+        background: white;
+        gap: 8px;
+    }
+
+    .search:focus-within {
+        background: #f9f8f8;
+    }
+
+    .search-input {
+        font-size: 16px;
+        color: #333;
+        margin-left: 12px;
+        border: none;
+        outline: none;
+        background: transparent;
+        flex: 1;
+    }
+
+    .search-btn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+        padding-left: 14px;
+    }
+
+    .search-btn:hover {
+        font-weight: bolder;
+    }
+
+    .search-input::placeholder,
+    .search-icon {
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .vline {
+        border-left: 1px solid #d1d5db;
+        height: 30px;
+    }
+    .playground {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 236px);
+    }
+    .icon {
+        width: 100px;
+        height: 100px;
+    }
+    .icon path{
+        fill: #BBB;
+    }
+    .playground h3 {
+        color: #BBB;
+        font-size: 30px;
+        margin: 0;
+    }
+        .missingCatalog {
+        width: 70%;
+        color: #BBB;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {}

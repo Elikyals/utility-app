@@ -1,25 +1,37 @@
+import MoviesSearch from './MoviesSearch.jsx'
+import MoviesWatchlist from './MoviesWatchlist.jsx'
+import { useState } from 'react'
 import styles from '../styles/Movies.module.css'
-import MovieIcon from "../assets/movie.svg?react"
 
 export default function Movies() {
+    const [currentPage, setCurrentPage] = useState('movies')
+
+    const renderPage = () => {
+        switch (currentPage) {
+            case 'movies':
+                return <MoviesSearch />
+            case 'watchlist':
+                return <MoviesWatchlist />
+            default:
+                return <MoviesSearch />
+        }
+    }
+    const handleButtonClick = () => {
+        setCurrentPage(currentPage === 'movies' ? 'watchlist': 'movies')
+    }
+    const movie_name = "Harry Porter"
+    const formatted_movie_name = movie_name.replace(" ", "+")
+    // fetch(`https://www.omdbapi.com/?s=${formatted_movie_name}&apikey=${API_KEY}`)
+    fetch(`https://www.omdbapi.com/?s=${formatted_movie_name}&apikey=${import.meta.env.VITE_OMDb_API_KEY}`)
     return (
         <>
             <header className={styles.header}>
                 <h2>Find the film</h2>
-                <a>My Watchlist</a>
+                <button onClick={handleButtonClick} className={styles['movie-nav-btn']}>
+                    {currentPage === "movies"? "My Watchlist": "Search for movies"}
+                </button>
             </header>
-            <form id="search-form" name="search-form">
-                <div className={styles.search}>
-                    <span className={`${styles['search-icon']} material-symbols-outlined`}>search</span>
-                    <input id="search-box" className={styles['search-input']} type="search" name="search" placeholder="Search for a movie" />
-                    <div className={styles.vline}></div>
-                    <input className={styles['search-btn']} type="submit" value="Search" />
-                </div>
-            </form>
-            <section className={styles.playground}>
-                <MovieIcon className={styles.icon} />
-                <h3>Start exploring</h3>
-            </section>
+            {renderPage()}
         </>
     )
 }
