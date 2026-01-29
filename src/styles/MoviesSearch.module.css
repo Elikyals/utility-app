@@ -35,10 +35,7 @@
         background: transparent;
         cursor: pointer;
         padding-left: 14px;
-    }
-
-    .search-btn:hover {
-        font-weight: bolder;
+        color: black;
     }
 
     .search-input::placeholder,
@@ -143,22 +140,23 @@
         font-size: 10px;
         margin: 0;
     }
-    
+
     .watchlist-icon {
         width: 14px;
         height: 14px;
     }
-    
+
     .movie-description {
         color: #6B7280;
         font-size: 12px;
         margin: 0;
     }
+
     hr {
-    height: 1px;
-    background-color: #d1d5db;
-    border: none;
-}
+        height: 1px;
+        background-color: #d1d5db;
+        border: none;
+    }
 }
 
 @media screen and (min-width: 1024px) {}
