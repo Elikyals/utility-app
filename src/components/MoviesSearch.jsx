@@ -18,7 +18,7 @@ export default function MoviesSearch() {
     }
     
     const searchMovie = (movie_name) => {
-        const formatted_movie_name = movie_name.replaceAll(" ", "+")
+        const formatted_movie_name = movie_name.trimEnd().replaceAll(" ", "+")
         fetch(`https://www.omdbapi.com/?s=${formatted_movie_name}&apikey=${import.meta.env.VITE_OMDb_API_KEY}`)
         .then(response => response.json())
         .then(data => {
