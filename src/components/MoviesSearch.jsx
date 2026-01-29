@@ -2,6 +2,7 @@ import styles from '../styles/MoviesSearch.module.css'
 import MovieIcon from "../assets/movie.svg?react"
 import AddWatchList from "../assets/add-watchlist.svg?react"
 import { useState } from 'react'
+import { addToWatchlist } from '../services/WatchlistService.js'
 
 export default function MoviesSearch() {
     const [searchInput, setSearchInput] = useState('')
@@ -99,7 +100,7 @@ export default function MoviesSearch() {
                                     <div className={styles['movie-meta']}>
                                         <p className={styles.runtime}>{detail.Runtime}</p>
                                         <p className={styles.genre}>{detail.Genre}</p>
-                                        <button className={styles['watchlist-btn']}>
+                                        <button onClick={() => addToWatchlist(detail)} className={styles['watchlist-btn']}>
                                             <AddWatchList className={styles['watchlist-icon']} />
                                             Watchlist
                                         </button>
