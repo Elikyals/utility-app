@@ -1,20 +1,24 @@
 import styles from '../styles/MoviesSearch.module.css'
 import MovieIcon from "../assets/movie.svg?react"
 import AddWatchList from "../assets/add-watchlist.svg?react"
-import { useState } from 'react'
-import { addToWatchlist } from '../services/WatchlistService.js'
+import RemoveWatchList from '../assets/remove-watchlist.svg?react'
+import { useState, useEffect } from 'react'
+import { addToWatchlist, movieInWatchlist, removeFromWatchlist } from '../services/WatchlistService.js'
 
 export default function MoviesSearch() {
     const [searchInput, setSearchInput] = useState('')
     const [movieResults, setMovieResults] = useState(null)
     const [hasSearched, setHasSearched] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
+    const [watchlistStatus, setWatchlistStatus] = useState({})
+    const [refreshWatchlist, setRefreshWatchlist] = useState(false)
 
     const handleSearch = (e) => {
         e.preventDefault()
         if (searchInput.trim()) {
             setIsLoading(true)
             searchMovie(searchInput)
+            setSearchInput('')
         }
     }
     
@@ -50,6 +54,18 @@ export default function MoviesSearch() {
         const movieDetails = await Promise.all(promises)
         return movieDetails        
     }
+
+    useEffect(() => {
+        if (movieResults && movieResults.length > 0) {
+            movieResults.forEach(async (movie) => {
+                const isInWatchlist = await movieInWatchlist(movie.imdbID)
+                setWatchlistStatus(prev => ({
+                    ...prev,
+                    [movie.imdbID]: isInWatchlist
+                }))
+            })
+        }
+    }, [movieResults, refreshWatchlist])
 
     const renderContent = () => {
         // Initial state - no search yet
@@ -100,10 +116,21 @@ export default function MoviesSearch() {
                                     <div className={styles['movie-meta']}>
                                         <p className={styles.runtime}>{detail.Runtime}</p>
                                         <p className={styles.genre}>{detail.Genre}</p>
-                                        <button onClick={() => addToWatchlist(detail)} className={styles['watchlist-btn']}>
-                                            <AddWatchList className={styles['watchlist-icon']} />
-                                            Watchlist
-                                        </button>
+                                        {watchlistStatus[detail.imdbID] ? (
+                                            <button onClick={() => {
+                                                removeFromWatchlist(detail.imdbID); setRefreshWatchlist(prev => !prev)
+                                                }} className={styles['watchlist-btn']}>
+                                                <RemoveWatchList className={styles['watchlist-icon']} />
+                                                Remove
+                                            </button>
+                                        ) : (
+                                            <button onClick={() => {
+                                                addToWatchlist(detail); 
+                                                setRefreshWatchlist(prev => !prev)}} className={styles['watchlist-btn']}>
+                                                <AddWatchList className={styles['watchlist-icon']} />
+                                                Watchlist
+                                            </button>
+                                        )}
                                     </div>
                                     <p className={styles['movie-description']}>{detail.Plot}</p>
                                 </div>

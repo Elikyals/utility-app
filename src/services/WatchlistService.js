@@ -1,4 +1,4 @@
-import { doc, setDoc, deleteDoc, getDocs, collection } from "firebase/firestore";
+import { doc, setDoc, deleteDoc, getDocs, collection, getDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 export const addToWatchlist = async (movie) => {
@@ -64,5 +64,16 @@ export const markAsUnwatched = async (movieId) => {
     console.log("Marked as unwatched!");
   } catch (error) {
     console.error("Error marking as unwatched:", error);
+  }
+};
+
+export const movieInWatchlist = async (movieId) => {
+  try {
+    const movieRef = doc(db, "watchlist", movieId.toString());
+    const movieSnap = await getDoc(movieRef);
+    return movieSnap.exists();
+  } catch (error) {
+    console.error("Error checking watchlist:", error);
+    return false;
   }
 };
