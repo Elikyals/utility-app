@@ -2,11 +2,12 @@ import styles from '../styles/MoviesWatchlist.module.css'
 import AddWatchList from '../assets/add-watchlist.svg?react'
 import RemoveWatchList from '../assets/remove-watchlist.svg?react'
 import MarkAsComplete from '../assets/mark-as-complete.svg?react'
-import { getWatchlist } from '../services/WatchlistService'
+import { getWatchlist, removeFromWatchlist } from '../services/WatchlistService'
 import { useState, useEffect } from 'react'
 
 export default function MoviesWatchlist() {
     const [watchlist, setWatchlist] = useState([])
+    const [refresh, setRefresh] = useState(false)
 
     useEffect(() => {
         async function loadWatchlist() {
@@ -18,7 +19,7 @@ export default function MoviesWatchlist() {
             }
         }
         loadWatchlist()
-    }, [])
+    }, [refresh])
 
     const renderContent = () => {
         // Empty watchlist
@@ -56,7 +57,10 @@ export default function MoviesWatchlist() {
                                         <p className={styles.genre}>{movie.genres}</p>
                                     </div>
                                     <div className={styles['watchlist-container']}>
-                                        <button onClick={null} className={styles['watchlist-btn']}>
+                                        <button onClick={() => {
+                                            removeFromWatchlist(movie.id)
+                                            setRefresh(!refresh)
+                                        }} className={styles['watchlist-btn']}>
                                             <RemoveWatchList className={styles['watchlist-icon']} />
                                             Remove
                                         </button>
