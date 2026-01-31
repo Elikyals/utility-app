@@ -92,7 +92,9 @@ body {
         gap: 10px;
         margin-bottom: 8px;
     }
-    .watchlist-btn {
+    .watchlist-btn,
+    .watchedLabel,
+    .unWatchedLabel {
         display: flex;
         align-items: center;
         gap: 4px;

@@ -11,6 +11,7 @@ export const addToWatchlist = async (movie) => {
       duration: movie.Runtime,
       genres: movie.Genre,
       description: movie.Plot,
+      hasWatched: false,
       addedAt: new Date().toISOString()
     });
     console.log("Added to watchlist!");
@@ -38,9 +39,30 @@ export const getWatchlist = async () => {
     querySnapshot.forEach((doc) => {
       watchlist.push(doc.data());
     });
-    return watchlist;
+    // Sort by hasWatched (false first, then true)
+    return watchlist.sort((a, b) => a.hasWatched - b.hasWatched);
   } catch (error) {
     console.error("Error fetching watchlist:", error);
     return [];
+  }
+};
+
+export const markAsWatched = async (movieId) => {
+  try {
+    const movieRef = doc(db, "watchlist", movieId.toString());
+    await setDoc(movieRef, { hasWatched: true }, { merge: true });
+    console.log("Marked as watched!");
+  } catch (error) {
+    console.error("Error marking as watched:", error);
+  }
+};
+
+export const markAsUnwatched = async (movieId) => {
+  try {
+    const movieRef = doc(db, "watchlist", movieId.toString());
+    await setDoc(movieRef, { hasWatched: false }, { merge: true });
+    console.log("Marked as unwatched!");
+  } catch (error) {
+    console.error("Error marking as unwatched:", error);
   }
 };

@@ -2,7 +2,8 @@ import styles from '../styles/MoviesWatchlist.module.css'
 import AddWatchList from '../assets/add-watchlist.svg?react'
 import RemoveWatchList from '../assets/remove-watchlist.svg?react'
 import MarkAsComplete from '../assets/mark-as-complete.svg?react'
-import { getWatchlist, removeFromWatchlist } from '../services/WatchlistService'
+import Watched from '../assets/watched.svg?react'
+import { getWatchlist, removeFromWatchlist, markAsWatched, markAsUnwatched } from '../services/WatchlistService'
 import { useState, useEffect } from 'react'
 
 export default function MoviesWatchlist() {
@@ -64,10 +65,23 @@ export default function MoviesWatchlist() {
                                             <RemoveWatchList className={styles['watchlist-icon']} />
                                             Remove
                                         </button>
-                                        <button onClick={null} className={styles['watchlist-btn']}>
+                                        {!movie.hasWatched ?
+                                        <button onClick={async () => {
+                                            await markAsWatched(movie.id)
+                                            setRefresh(!refresh)
+                                        }} className={styles['watchlist-btn']}>
                                             <MarkAsComplete className={styles['watchlist-icon']} />
                                             Mark as Watched
+                                        </button> : 
+                                        <button onClick={async() => {
+                                            await markAsUnwatched(movie.id)
+                                            setRefresh(!refresh)
+                                        }} className={styles.unWatchedLabel}>
+                                            <Watched className={styles['watchlist-icon']} />
+                                            Watched
                                         </button>
+                                        }
+                                        
                                     </div>
                                     <p className={styles['movie-description']}>{movie.description}</p>
                                 </div>
