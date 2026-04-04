@@ -10,7 +10,7 @@
         - [X] Randomize
         - LT Tracker
         - [X] Portfolio
-        - Movies
+        - [X] Movies
     - Tablet view
         - Home
         - Randomize
