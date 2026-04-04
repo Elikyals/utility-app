@@ -30,4 +30,55 @@ body {
     }
 }
 
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 600px) {
+    header {
+        display: none;
+    }
+
+    .playground {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        min-height: calc(100vh - 130px);
+    }
+
+    .playground::after {
+        content: "🚧 Under Development\AResize to mobile size or open on mobile phone";
+        white-space: pre-line;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .playground > * {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header {
+        display: none;
+    }
+
+    .playground {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .playground::after {
+        content: "🚧 Under Development\AResize to mobile size or open on mobile phone";
+        white-space: pre-line;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .playground > * {
+        display: none;
+    }
+}

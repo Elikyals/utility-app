@@ -36,22 +36,47 @@ body {
     }
 }
 
+@media screen and (min-width: 600px) {
+    .playground {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        min-height: calc(100vh - 130px);
+    }
+
+    .playground::after {
+        content: "🚧 Under Development\AResize to mobile size or open on mobile phone";
+        white-space: pre-line;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .playground > * {
+        display: none;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .playground {
-        display: block;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: auto;
     }
-    .icon {
-        width: 200px;
-        height: 200px;
-        align-items: center;
-    }
-    
 
-    .playground h2 {
-        font-size: 60px;
-        width: 75%;
-        margin: 0 auto;
-    } 
+    .playground::after {
+        content: "🚧 Under Development\AResize to mobile size or open on mobile phone";
+        white-space: pre-line;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .playground > * {
+        display: none;
+    }
 }

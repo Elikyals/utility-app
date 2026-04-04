@@ -69,10 +69,17 @@
     }
 }
 
-@media screen and (min-width: 600px) {}
+@media screen and (min-width: 600px) {
+    nav {
+        display: none;
+    }
+}
 
 @media screen and (min-width: 1024px) {
     nav {
+        display: none;
+    }
+    /* nav {
         height: 100vh;
     }
 
@@ -131,5 +138,5 @@
         background-color: #5BB25F;
         opacity: 0.5;
         border-block: 2px dashed #061807;
-    }
+    } */
 }
