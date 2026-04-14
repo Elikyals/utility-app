@@ -69,18 +69,19 @@
     }
 }
 
-@media screen and (min-width: 600px) {
-    nav {
-        display: none;
-    }
-}
+@media screen and (min-width: 600px) { 
 
-@media screen and (min-width: 1024px) {
     nav {
-        display: none;
-    }
-    /* nav {
         height: 100vh;
+    }
+    
+    nav .icon {
+        height: 32px;
+        width: 32px;
+    }
+
+    nav .icon path {
+        fill: #BBB;
     }
 
     .app-logo {
@@ -133,10 +134,16 @@
         opacity: 0.5;
         border-block: 2px dashed #061807;
     }
-
+    
     .active {
         background-color: #5BB25F;
         opacity: 0.5;
         border-block: 2px dashed #061807;
-    } */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    nav {
+        display: none;
+    }
 }
