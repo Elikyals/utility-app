@@ -120,30 +120,20 @@
         font-weight: bold;
         color: rgba(0, 0, 0, 0.6);
         margin-block: 0.5px;
-    }
-
-    nav button img {
-        height: 40px;
-        width: 40px;
-        filter: saturate(0%) brightness(0.4);
-        opacity: 0.3;
+        cursor: pointer;
     }
 
     nav button:hover {
-        background-color: #5BB25F;
-        opacity: 0.5;
-        border-block: 2px dashed #061807;
+        color: #5BB25F;
+    }
+    nav button:hover .icon path {
+        fill: #5BB25F;
     }
     
     .active {
-        background-color: #5BB25F;
-        opacity: 0.5;
-        border-block: 2px dashed #061807;
+        color: #5BB25F;
     }
-}
-
-@media screen and (min-width: 1024px) {
-    nav {
-        display: none;
+    .active .icon path{
+        fill: #5BB25F;
     }
 }
