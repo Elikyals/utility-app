@@ -38,7 +38,7 @@ body {
     }
     Nav {
         background-color: white;
-        filter: drop-shadow(1px 0px 0.75px #8b8b8b);
+        filter: drop-shadow(1px 0px 0.75px #e6e5e5);
         width: 400px;
     }
     .main-content {

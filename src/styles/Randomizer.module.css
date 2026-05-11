@@ -110,7 +110,7 @@ body {
         margin-block: 30px;
         border: 2px solid #5BB25F;
         border-radius: 10px;
-        width: 300px;
+        width: clamp(300px, 40vw, 410px);
         height: 250px;
         margin-inline: auto;
         background-color: #F7F7F7
@@ -183,7 +183,7 @@ body {
             margin-block: 30px;
             border: 2px solid #5BB25F;
             border-radius: 10px;
-            width: 300px;
+            width: clamp(410px, 40vw, 600px);
             height: 250px;
             margin-inline: auto;
             background-color: #F7F7F7
