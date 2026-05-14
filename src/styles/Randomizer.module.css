@@ -80,44 +80,145 @@ body {
 @media screen and (min-width: 600px) {
     .playground {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: auto;
-        min-height: calc(100vh - 130px);
-    }
-
-    .playground::after {
-        content: "🚧 Under Development\AResize to mobile size or open on mobile phone";
-        white-space: pre-line;
         text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        color: black;
+        min-height: calc(100vh - 130px);
+        margin: auto;
     }
 
-    .playground > * {
-        display: none;
+    .playground h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    .playground button {
+        background-color: #5BB25F;
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Inter", sans-serif;
+        text-transform: uppercase;
+    }
+
+    .displayScreen {
+        margin-block: 30px;
+        border: 2px solid #5BB25F;
+        border-radius: 10px;
+        width: clamp(300px, 40vw, 410px);
+        height: 250px;
+        margin-inline: auto;
+        background-color: #F7F7F7
+    }
+
+    .displayScreenEmpty img {
+        height: 50px;
+        margin-top: 40px;
+    }
+
+    .displayScreenEmpty p {
+        color: #BBBBBB;
+        font-size: 18px;
+        font-weight: 300;
+        width: 75%;
+        margin: 0 auto;
+        line-height: normal;
+
+    }
+
+    .displayScreenActive {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .displayScreenActive h2,
+    .displayScreenActive p {
+        margin: 0;
+        padding-block: 5px;
+    }
+
+    .challenge-category {
+        font-style: italic;
+        font-weight: bolder;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .playground {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-    }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: calc(100vh - 130px);
+            margin-inline: auto;
+        }
 
-    .playground::after {
-        content: "🚧 Under Development\AResize to mobile size or open on mobile phone";
-        white-space: pre-line;
-        text-align: center;
-        font-size: 32px;
-        font-weight: bold;
-        color: black;
-    }
+        .playground h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
 
-    .playground > * {
-        display: none;
-    }
+        .playground button {
+            background-color: #5BB25F;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: "Inter", sans-serif;
+            text-transform: uppercase;
+        }
+
+        .displayScreen {
+            margin-block: 30px;
+            border: 2px solid #5BB25F;
+            border-radius: 10px;
+            width: clamp(410px, 40vw, 600px);
+            height: 250px;
+            margin-inline: auto;
+            background-color: #F7F7F7
+        }
+
+        .displayScreenEmpty img {
+            height: 50px;
+            margin-top: 40px;
+        }
+
+        .displayScreenEmpty p {
+            color: #BBBBBB;
+            font-size: 18px;
+            font-weight: 300;
+            width: 75%;
+            margin: 0 auto;
+            line-height: normal;
+
+        }
+
+        .displayScreenActive {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .displayScreenActive h2,
+        .displayScreenActive p {
+            margin: 0;
+            padding-block: 5px;
+        }
+
+        .challenge-category {
+            font-style: italic;
+            font-weight: bolder;
+        }
 }
