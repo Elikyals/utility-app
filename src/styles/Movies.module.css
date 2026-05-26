@@ -32,7 +32,14 @@ body {
 
 @media screen and (min-width: 600px) {
     header {
-        display: none;
+        display: flex;
+        background-color: #5BB25F;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px 30px 15px;
+        color: white;
+        align-items: center;
     }
 
     .playground {
@@ -43,23 +50,39 @@ body {
         min-height: calc(100vh - 130px);
     }
 
-    .playground::after {
-        content: "🚧 Under Development\AResize to mobile size or open on mobile phone";
+    .movie-nav-btn {
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    /* .playground::after {
+        
         white-space: pre-line;
         text-align: center;
         font-size: 24px;
         font-weight: bold;
         color: black;
-    }
+    } */
 
-    .playground > * {
+    /* .playground > * {
         display: none;
-    }
+    } */
 }
 
 @media screen and (min-width: 1024px) {
     header {
-        display: none;
+        display: flex;
+        background-color: #5BB25F;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px 30px 15px;
+        color: white;
+        align-items: center;
     }
 
     .playground {
@@ -67,9 +90,19 @@ body {
         justify-content: center;
         align-items: center;
         margin: auto;
+        min-height: calc(100vh - 130px);
     }
 
-    .playground::after {
+    .movie-nav-btn {
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    /* .playground::after {
         content: "🚧 Under Development\AResize to mobile size or open on mobile phone";
         white-space: pre-line;
         text-align: center;
@@ -80,5 +113,5 @@ body {
 
     .playground > * {
         display: none;
-    }
+    } */
 }
